@@ -1,0 +1,56 @@
+/* Yleiset tyylit */
+body {
+    font-family: 'Arial', sans-serif; /* Muuta fontti halutuksi */
+    line-height: 1.6; /* Lisää riviväliä */
+    margin: 0; /* Poista oletus marginaalit */
+    padding: 0; /* Poista oletus täytteet */
+}
+
+/* Navigaatiopalkki */
+.navbar {
+    margin-bottom: 20px; /* Lisää tilaa navigaatiopalkin ja muiden elementtien väliin */
+}
+
+/* Otsikot */
+h1, h2, h3, h4, h5 {
+    color: #333; /* Tummanharmaa väri */
+}
+
+/* Kortti-elementit */
+.card {
+    border: 1px solid #ddd; /* Vaalea reunus */
+    border-radius: 8px; /* Kulmien pyöristys */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Hieman varjoa */
+    overflow: hidden; /* Poista yli jäävät elementit */
+}
+
+.card-body {
+    padding: 15px; /* Sisältöalueen täyte */
+}
+
+/* Fakeimg tyyli */
+.fakeimg {
+    height: 200px; /* Kuvan korkeus */
+    background: #aaa; /* Harmaa tausta */
+    border-radius: 4px; /* Kulmien pyöristys */
+}
+
+/* Footer */
+footer {
+    background-color: #333; /* Tummanharmaa tausta */
+    color: white; /* Valkoinen teksti */
+    padding: 15px 0; /* Pysty- ja vaakasuora täyte */
+    text-align: center; /* Keskitä teksti */
+}
+
+/* Responsiivisuus */
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column; /* Muuta nav-painikkeet pystyiksi pienissä näytöissä */
+    }
+
+    .col-sm-4, .col-sm-8 {
+        flex: 0 0 100%; /* Muuta sarakkeet täysleveiksi pienissä näytöissä */
+        max-width: 100%; /* Varmista, että leveys on 100% */
+    }
+}
