@@ -11,9 +11,22 @@ body {
     margin-bottom: 20px; /* Lisää tilaa navigaatiopalkin ja muiden elementtien väliin */
 }
 
-/* Otsikot */
-h1, h2, h3, h4, h5 {
-    color: #333; /* Tummanharmaa väri */
+/* Otsikkotyylit */
+.custom-header {
+    padding: 50px; /* Muuta täytettä tarpeen mukaan */
+    background-color: #007bff; /* Voit vaihtaa taustavärin */
+    color: white; /* Tekstin väri */
+    text-align: center; /* Tekstin keskittyminen */
+    border-radius: 8px; /* Kulmien pyöristys */
+}
+
+.custom-header h1 {
+    font-size: 2.5rem; /* Muuta otsikon fonttikokoa */
+    margin-bottom: 15px; /* Otsikon ja tekstin välinen etäisyys */
+}
+
+.custom-header p {
+    font-size: 1.2rem; /* Muuta alaotsikon fonttikokoa */
 }
 
 /* Kortti-elementit */
