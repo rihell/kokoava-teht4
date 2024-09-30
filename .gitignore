@@ -1,0 +1,24 @@
+# Estä käyttöjärjestelmien luomat tiedostot
+.DS_Store
+Thumbs.db
+
+# Estä lokitiedostot
+*.log
+
+# Estä ympäristöasetukset ja konfiguraatiot
+*.env
+
+# Estä npm-moduulit
+/node_modules/
+
+# Estä build-kansiot ja väliaikaistiedostot
+/dist/
+/build/
+
+# Estä IDE-konfiguraatiot
+.idea/
+.vscode/
+
+# Estä projektikohtaiset temp tiedostot
+*.tmp
+*.swp
