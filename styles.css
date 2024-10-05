@@ -8,16 +8,16 @@ body {
 
 /* Navigaatiopalkki */
 .navbar {
-    margin-bottom: 20px; /* Lisää tilaa navigaatiopalkin ja muiden elementtien väliin */
+    margin-bottom: 0; /* Lisää tilaa navigaatiopalkin ja muiden elementtien väliin */
 }
 
 /* Otsikkotyylit */
 .custom-header {
-    padding: 50px; /* Muuta täytettä tarpeen mukaan */
-    background-color: #007bff; /* Voit vaihtaa taustavärin */
+    padding: 50px; 
+    background-color: #5a7448; /* Taustaväri */
     color: white; /* Tekstin väri */
-    text-align: center; /* Tekstin keskittyminen */
-    border-radius: 8px; /* Kulmien pyöristys */
+    text-align: center; 
+    border-radius: 8px; 
 }
 
 .custom-header h1 {
@@ -41,6 +41,16 @@ body {
     padding: 15px; /* Sisältöalueen täyte */
 }
 
+.btn.btn-primary {
+    background-color: #5a7448; /* Taustaväri */
+    color: white; /* Tekstin väri */
+    border: 2px solid #4a5d38; /* Reunan väri ja paksuus */
+}
+.btn.btn-primary:hover {
+    background-color: #4a5d38; /* Väri hover-tilassa */
+    border: 2px solid #3a4d28; /* Muuta reunaväriä hover-tilassa */
+}
+
 /* Fakeimg tyyli */
 .fakeimg {
     height: 200px; /* Kuvan korkeus */
@@ -50,10 +60,10 @@ body {
 
 /* Footer */
 footer {
-    background-color: #333; /* Tummanharmaa tausta */
-    color: white; /* Valkoinen teksti */
-    padding: 15px 0; /* Pysty- ja vaakasuora täyte */
-    text-align: center; /* Keskitä teksti */
+    background-color: #5a7448; /* Footer taustaväri */
+    color: white; /* Footer teksti */
+    padding: 15px 0; 
+    text-align: center; 
 }
 
 /* Responsiivisuus */

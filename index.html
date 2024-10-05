@@ -1,50 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>GreatBooks</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css"> <!-- Omaa CSS-tiedostoasi varten -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <title>GreatBooks</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    .fakeimg {
+      height: 200px;
+      background: #aaa;
+    }
+    #kirjaTulokset {
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-
-<!--Navigointi bar-->
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <div class="container-fluid">
+    <!-- Navi bar -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <div class="container-fluid">
         <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link active" href="#">Etusivu</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Selaa</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">TOP 10</a>
-            </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#greatbooks">GreatBooks</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#genres">Genres</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#topsearch">Most searched</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#search">Search</a>
+          </li>
         </ul>
+      </div>
+    </nav>
+
+    <!-- Ylätunniste -->
+    <div class="custom-header" id="greatbooks">
+      <h1>GreatBooks</h1>
+      <p>Kaikki teokset samassa paikassa</p> 
     </div>
-</nav>
 
-<!--Otsikot-->
-<div class="p-5 bg-primary text-white text-center">
-    <h1>GreatBooks</h1>
-    <p>Kattava valikoima teoksia ja kirjailijoita</p> 
-</div>
+    <!-- Kirjakortit eri genreistä -->
+    <div class="container mt-5" id="genres">
+      <h2>Book Genres</h2>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="card">
+            <img src="fantasy (2).jpg" class="card-img-top" alt="Picture of old books.">
+            <div class="card-body">
+              <h5 class="card-title">Fantasy</h5>
+              <p class="card-text">Explore the realms of magic, mythical creatures, and epic adventures. Fantasy books transport you to worlds beyond imagination where anything is possible.</p>
+              <a href="#" class="btn btn-primary">See more</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card">
+            <img src="nonfiction (2).jpg" class="card-img-top" alt="Picture of feather on top of a book.">
+            <div class="card-body">
+              <h5 class="card-title">Non-fiction</h5>
+              <p class="card-text">Delve into real stories, factual accounts, and informative insights. Non-fiction books provide knowledge and understanding of our world through true narratives and expert opinions.</p>
+              <a href="#" class="btn btn-primary">See more</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card">
+            <img src="mystery.jpg" class="card-img-top" alt="Picture of a open book that has few people in it.">
+            <div class="card-body">
+              <h5 class="card-title">Mystery</h5>
+              <p class="card-text">Unravel secrets, solve puzzles, and chase down clues in thrilling stories of suspense and intrigue. Mystery books keep you guessing until the very last page.</p>
+              <a href="#" class="btn btn-primary">See more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<!-- Kirjojen näyttöalue -->
-<div class="container mt-5">
-    <h2>Search</h2>
-    <div id="recipes-container" class="mt-3"></div> <!-- Kirjojen näyttöalue -->
-</div>
+    <!-- TOP haut -->
+    <div class="container mt-5" id="topsearch">
+      <div class="row">
+        <div class="col-sm-4">
+          <h2>Most searched</h2>
+          <ul id="topHaut" class="list-group">
+            <!-- Hakulista päivittyy tähän JavaScriptin avulla -->
+          </ul>
+        </div>
 
-<div class="mt-5 p-4 bg-dark text-white text-center">
-    <p>TOP 10</p>
-</div>
+        <!-- Hakukenttä -->
+        <div class="col-sm-8" id="search">
+          <h2>Search for a book</h2>
+          <p>Input books name and press "search".</p>
 
-<!-- Omat JavaScript-tiedostot -->
-<script src="script.js"></script>
+          <!-- Hakukenttä -->
+          <form id="kirjaHakuLomake">
+            <div class="input-group mb-3">
+              <input type="text" id="kirjaOtsikko" class="form-control" placeholder="Kirjan otsikko">
+              <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+          </form>
 
+          <!-- Kirjatulokset -->
+          <div id="kirjaTulokset"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="custom-header">
+      <p>Footer</p>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
