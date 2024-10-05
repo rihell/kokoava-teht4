@@ -58,6 +58,10 @@ body {
     border-radius: 4px; /* Kulmien pyöristys */
 }
 
+#topsearch, #search {
+    margin-bottom: 30px; /* Lisää tilaa alareunaan */
+}
+
 footer {
     margin-top: auto; /* Siirtää footerin alareunaan */
     padding: 15px; /* Tarpeen mukaan */
