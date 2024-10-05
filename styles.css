@@ -1,14 +1,23 @@
 /* Yleiset tyylit */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
 body {
     font-family: 'Arial', sans-serif; /* Muuta fontti halutuksi */
     line-height: 1.6; /* Lisää riviväliä */
-    margin: 0; /* Poista oletus marginaalit */
     padding: 0; /* Poista oletus täytteet */
+    display: flex;
+    flex-direction: column;
 }
 
 /* Navigaatiopalkki */
 .navbar {
     margin-bottom: 0; /* Lisää tilaa navigaatiopalkin ja muiden elementtien väliin */
+}
+.custom-navbar {
+    background-color: #3a4d28;
 }
 
 /* Otsikkotyylit */
@@ -17,16 +26,6 @@ body {
     background-color: #5a7448; /* Taustaväri */
     color: white; /* Tekstin väri */
     text-align: center; 
-    border-radius: 8px; 
-}
-
-.custom-header h1 {
-    font-size: 2.5rem; /* Muuta otsikon fonttikokoa */
-    margin-bottom: 15px; /* Otsikon ja tekstin välinen etäisyys */
-}
-
-.custom-header p {
-    font-size: 1.2rem; /* Muuta alaotsikon fonttikokoa */
 }
 
 /* Kortti-elementit */
@@ -46,6 +45,7 @@ body {
     color: white; /* Tekstin väri */
     border: 2px solid #4a5d38; /* Reunan väri ja paksuus */
 }
+
 .btn.btn-primary:hover {
     background-color: #4a5d38; /* Väri hover-tilassa */
     border: 2px solid #3a4d28; /* Muuta reunaväriä hover-tilassa */
@@ -58,12 +58,12 @@ body {
     border-radius: 4px; /* Kulmien pyöristys */
 }
 
-/* Footer */
 footer {
-    background-color: #5a7448; /* Footer taustaväri */
-    color: white; /* Footer teksti */
-    padding: 15px 0; 
-    text-align: center; 
+    margin-top: auto; /* Siirtää footerin alareunaan */
+    padding: 15px; /* Tarpeen mukaan */
+    background-color: #5a7448; /* Muuta tarpeen mukaan */
+    color: white; /* Tekstin väri */
+    text-align: center; /* Keskitä teksti */
 }
 
 /* Responsiivisuus */
