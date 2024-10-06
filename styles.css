@@ -15,17 +15,36 @@ body {
 /* Navigaatiopalkki */
 .navbar {
     margin-bottom: 0; /* Lisää tilaa navigaatiopalkin ja muiden elementtien väliin */
+    position: fixed; /*Liikkuu sivun mukana*/
+    width: 100%; /*Koko sivun levyinen*/
+    z-index: 1000; /*Pysyy muiden elementtien päällä*/
 }
 .custom-navbar {
-    background-color: #3a4d28;
+    background-color: #3a4d28; 
+}
+.content {
+    padding-top: 60px; /*Jotta sisältö ei jää navigaation alle*/
 }
 
-/* Otsikkotyylit */
 .custom-header {
-    padding: 50px; 
+    display: flex; /* Flexbox käyttöön */
+    flex-direction: column; /* Asettaa elementit pystysuunnassa */
+    justify-content: center; /* Keskittää pystysuunnassa */
+    align-items: center; /* Keskittää vaakasuunnassa */
+    height: 300px; /* Suurempi ylätunnisteen korkeus */
     background-color: #5a7448; /* Taustaväri */
     color: white; /* Tekstin väri */
-    text-align: center; 
+    text-align: center; /* Teksti keskitetty vaakasuunnassa */
+}
+
+.custom-header h1 {
+    font-size: 3rem; /* Suurempi otsikkoteksti */
+    margin: 0;
+}
+
+.custom-header p {
+    font-size: 1.5rem; /* Suurempi kappaleteksti */
+    margin: 0;
 }
 
 /* Kortti-elementit */
