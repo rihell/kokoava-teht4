@@ -21,66 +21,53 @@ body {
     background-color: rgba(58, 77, 40, 0.8); 
 }
 
-/* Ylätunnisteen taustakuva */
-.custom-header {
-    position: relative; 
-    height: 300px; /* Suurempi korkeus */
-    color: white; 
-    text-align: center; 
-    overflow: hidden; 
-    z-index: 1; 
+/* Sisältö */
+.content {
+    display: flex; /* Muuta sisältöflexiksi */
+    padding-top: 60px; /* Anna tilaa navigaatiopalkille */
 }
 
-.header-bg {
-    position: absolute; 
-    top: 0; 
-    left: 0;
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
-    z-index: -1; 
+/* Ylätunnisteen taustaväri ja keskitä teksti */
+.custom-header {
+    background-color: #5a7448; /* Vihreä taustaväri */
+    color: white; /* Tekstin väri */
+    text-align: center; /* Keskittää tekstin */
+    padding: 60px 0; /* Lisää tilaa ylhäältä ja alhaalta */
+    display: flex; /* Muutetaan flexboxiksi */
+    justify-content: center; /* Keskitetään vaakasuunnassa */
+    align-items: center; /* Keskitetään pystysuunnassa */
+    height: 100vh; /* Varmistetaan, että se vie koko korkeuden */
 }
 
 .header-content {
-    position: relative; 
-    z-index: 2; 
     display: flex; 
     flex-direction: column; 
-    justify-content: center; 
-    height: 100%; 
-    padding: 0 15px; 
+    align-items: center; 
 }
 
-/* Kortti-elementit */
-.card {
-    border: 1px solid #ddd; /* Vaalea reunus */
+/* Hakupalkki ja Most Searched */
+/* Poista d-flex hakupalkin tyyleistä, ei enää tarvita */
+#search {
+    margin-left: 20px; /* Lisätään tilaa vasemmalta */
+    padding: 20px; /* Lisää sisäistä täytettä */
+    background-color: #f8f9fa; /* Vaaleampi taustaväri */
+    border: 1px solid #ddd; /* Reuna hakupalkille */
     border-radius: 8px; /* Kulmien pyöristys */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Hieman varjoa */
-    overflow: hidden; /* Poista yli jäävät elementit */
 }
 
-.card-body {
-    padding: 15px; /* Sisältöalueen täyte */
-}
 
-.btn.btn-primary {
-    background-color: #5a7448; /* Taustaväri */
-    color: white; /* Tekstin väri */
-    border: 2px solid #4a5d38; /* Reunan väri ja paksuus */
-}
-
-.btn.btn-primary:hover {
-    background-color: #4a5d38; /* Väri hover-tilassa */
-    border: 2px solid #3a4d28; /* Muuta reunaväriä hover-tilassa */
-}
-
-/* Hakutulosten ja hakukentän tyylit */
-#topSearches, #search { /* Muutettu ID */
+/* Most Searched */
+#topSearches {
     margin-bottom: 30px; /* Lisää tilaa alareunaan */
+    margin-right: 20px; /* Lisää tilaa oikealta */
+    background-color: #f8f9fa; /* Vaaleampi taustaväri */
+    border: 1px solid #ddd; /* Reuna */
+    border-radius: 8px; /* Kulmien pyöristys */
 }
 
-#topSearches ul {
-    padding: 0; /* Poista sisennys */
+/* Kirja genrejen haitarit */
+.accordion-button {
+    background-color: #f8f9fa; /* Vaaleampi taustaväri */
 }
 
 /* Footer */
@@ -97,9 +84,5 @@ footer {
     .navbar-nav {
         flex-direction: column; /* Muuta nav-painikkeet pystyiksi pienissä näytöissä */
     }
-
-    .col-sm-4, .col-sm-8 {
-        flex: 0 0 100%; /* Muuta sarakkeet täysleveiksi pienissä näytöissä */
-        max-width: 100%; /* Varmista, että leveys on 100% */
-    }
 }
+

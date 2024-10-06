@@ -1,108 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>GreatBooks</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>GreatBooks</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .fakeimg {
+            height: 200px;
+            background: #aaa;
+        }
+        #bookResults {
+            margin-top: 20px;
+        }
+        #topSearches {
+            margin-right: 20px; /* Lisää tilaa oikealta */
+        }
+    </style>
 </head>
 <body>
     <!-- Navi bar -->
     <nav class="navbar navbar-expand-sm custom-navbar navbar-dark">
-      <div class="container-fluid">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" href="#greatbooks">GreatBooks</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#genres">Genres</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#topSearches">Most searched</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#search">Search</a>
-          </li>
-        </ul>
-      </div>
+        <div class="container-fluid">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#greatbooks">GreatBooks</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#genres">Genres</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#topSearches">Most searched</a>
+                </li>
+            </ul>
+        </div>
     </nav>
 
-  <!-- Ylätunniste -->
-  <div class="custom-header content" id="greatbooks">
-    <img src="kirjahylly.jpg" alt="Header Background" class="header-bg"> <!-- Tarkista, että polku on oikein -->
-    <div class="header-content">
+    <!-- Ylätunniste -->
+    <div class="custom-header content" id="greatbooks">
+      <div class="header-content">
         <h1>GreatBooks</h1>
         <p>All books at the same place</p>
-    </div>
-  </div>
-
-    <!-- Kirjakortit eri genreistä -->
-    <div class="container mt-5" id="genres">
-      <h2>Book Genres</h2>
-      <div class="row">
-        <div class="col-sm-4">
-          <div class="card">
-            <img src="fantasy (2).jpg" class="card-img-top" alt="Picture of old books.">
-            <div class="card-body">
-              <h5 class="card-title">Fantasy</h5>
-              <p class="card-text">Explore the realms of magic, mythical creatures, and epic adventures. Fantasy books transport you to worlds beyond imagination where anything is possible.</p>
-              <a href="#" class="btn btn-primary">See more</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="card">
-            <img src="nonfiction (2).jpg" class="card-img-top" alt="Picture of feather on top of a book.">
-            <div class="card-body">
-              <h5 class="card-title">Non-fiction</h5>
-              <p class="card-text">Delve into real stories, factual accounts, and informative insights. Non-fiction books provide knowledge and understanding of our world through true narratives and expert opinions.</p>
-              <a href="#" class="btn btn-primary">See more</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="card">
-            <img src="mystery.jpg" class="card-img-top" alt="Picture of an open book with a few people in it.">
-            <div class="card-body">
-              <h5 class="card-title">Mystery</h5>
-              <p class="card-text">Unravel secrets, solve puzzles, and chase down clues in thrilling stories of suspense and intrigue. Mystery books keep you guessing until the very last page.</p>
-              <a href="#" class="btn btn-primary">See more</a>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
 
-    <!-- TOP haut -->
-    <div class="container mt-5" id="topHaut">
-      <h2>Most searched</h2>
-      <ul id="topSearches" class="list-group">
-        <!-- Hakulista päivittyy tähän JavaScriptin avulla -->
-      </ul>
-    </div>
+<!-- Hakupalkki ja Most Searched -->
+<div class="container mt-5">
+  <div class="row"> <!-- Flexbox sisältö -->
+      <!-- Vasemman puolen osio -->
+      <div class="col-md-4">
+          <div id="topSearches" class="bg-light p-3 rounded">
+              <h2>Most searched</h2>
+              <ul class="list-group">
+                  <!-- Hakulista päivittyy tähän JavaScriptin avulla -->
+              </ul>
+          </div>
 
-    <!-- Hakukenttä -->
-    <div class="container mt-5" id="search">
-      <h2>Search for a book</h2>
-      <p>Input the book's name and press "search".</p>
+          <!-- Book Genres Accordion -->
+          <div id="genres" class="mt-4">
+              <h2>Book Genres</h2>
+              <div class="accordion" id="genreAccordion">
+                  <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingFantasy">
+                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFantasy" aria-expanded="true" aria-controls="collapseFantasy">
+                              Fantasy
+                          </button>
+                      </h2>
+                      <div id="collapseFantasy" class="accordion-collapse collapse show" aria-labelledby="headingFantasy" data-bs-parent="#genreAccordion">
+                          <div class="accordion-body">
+                              Fantasy offers magical worlds, mythical creatures, and epic adventures, with series like Harry Potter and The Lord of the Rings becoming cultural icons.
+                          </div>
+                      </div>
+                  </div>
 
-      <!-- Hakukenttä -->
-      <form id="bookSearchForm">
-        <div class="input-group mb-3">
-          <input type="text" id="bookTitle" class="form-control" placeholder="Book title">
-          <button type="submit" class="btn btn-primary">Search</button>
-        </div>
-      </form>
+                  <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingRomance">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRomance" aria-expanded="false" aria-controls="collapseRomance">
+                              Romance
+                          </button>
+                      </h2>
+                      <div id="collapseRomance" class="accordion-collapse collapse" aria-labelledby="headingRomance" data-bs-parent="#genreAccordion">
+                          <div class="accordion-body">
+                              Romance focuses on love and relationships, often with emotional depth and happy endings.
+                          </div>
+                      </div>
+                  </div>
 
-      <!-- Kirjatulokset -->
-      <div id="bookResults"></div>
-    </div>
+                  <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingMystery">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMystery" aria-expanded="false" aria-controls="collapseMystery">
+                              Mystery
+                          </button>
+                      </h2>
+                      <div id="collapseMystery" class="accordion-collapse collapse" aria-labelledby="headingMystery" data-bs-parent="#genreAccordion">
+                          <div class="accordion-body">
+                              Mystery centers on solving crimes or puzzles, keeping readers hooked with clever twists and suspense.
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingThriller">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThriller" aria-expanded="false" aria-controls="collapseThriller">
+                              Thriller
+                          </button>
+                      </h2>
+                      <div id="collapseThriller" class="accordion-collapse collapse" aria-labelledby="headingThriller" data-bs-parent="#genreAccordion">
+                          <div class="accordion-body">
+                              Thrillers are fast-paced, filled with tension and unexpected turns.
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingSciFi">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSciFi" aria-expanded="false" aria-controls="collapseSciFi">
+                              Sci-Fi
+                          </button>
+                      </h2>
+                      <div id="collapseSciFi" class="accordion-collapse collapse" aria-labelledby="headingSciFi" data-bs-parent="#genreAccordion">
+                          <div class="accordion-body">
+                              Sci-Fi explores futuristic technology, space, and philosophical questions about humanity.
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- Oikean puolen osio -->
+      <div class="col-md-8"> <!-- Oikealle puolelle hakupalkki -->
+          <div id="search" class="bg-light p-3 rounded">
+              <h2>Search for a book</h2>
+              <p>Input the book's name and press "search".</p>
+
+              <!-- Hakukenttä -->
+              <form id="bookSearchForm">
+                  <div class="input-group mb-3">
+                      <input type="text" id="bookTitle" class="form-control" placeholder="Book title" aria-label="Book title">
+                      <button type="submit" class="btn btn-primary">Search</button>
+                  </div>
+              </form>
+
+              <!-- Kirjatulokset -->
+              <div id="bookResults"></div>
+          </div>
+      </div>
+  </div>
+</div>
 
     <!-- Footer -->
     <footer>
-      <p>It's time for a new adventure!</p>
+        <p>It's time for a new adventure!</p>
+        <p>Contact: greatbooks@greatbooks.com</p>
     </footer>
 
     <script src="script.js"></script>
