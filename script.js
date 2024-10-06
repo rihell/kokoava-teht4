@@ -1,5 +1,10 @@
 // Save search term and books to localStorage and update the list
 function saveSearch(title, books) {
+    if (books.length === 0) {
+        console.log('No books found for this search. Not saving to searches.');
+        return; // Älä tallenna, jos teoksia ei ole
+    }
+
     let searches = JSON.parse(localStorage.getItem('searches')) || [];
     searches.unshift({ title, books }); // Lisää haku listan alkuun
     if (searches.length > 5) {
@@ -11,20 +16,28 @@ function saveSearch(title, books) {
 
 // Update top 5 search list on the page
 function updateSearchList() {
-    const topSearchesUl = document.getElementById('topSearches'); // Varmista, että ID on oikein
-    topSearchesUl.innerHTML = ''; // Tyhjennä aiempi lista
+    const topHautUl = document.getElementById('topSearches');
+    topHautUl.innerHTML = ''; // Tyhjennä aiempi lista
     const searches = JSON.parse(localStorage.getItem('searches')) || [];
-    searches.forEach(item => {
-        const li = document.createElement('li');
-        li.classList.add('list-group-item');
-        li.textContent = item.title; // Hakusana
 
-        // Tarkistetaan onko kirjat määritelty
-        if (item.books && item.books.length > 0) {
-            const firstBook = item.books[0]; // Hae ensimmäinen kirja
-            const bookP = document.createElement('p');
-            bookP.textContent = `Book: ${firstBook.title}`; // Näytä teos
-            li.appendChild(bookP);
+    searches.forEach(item => {
+        if (item.books && item.books.length > 0) { // Vain haut, joilla on teoksia
+            const li = document.createElement('li');
+            li.classList.add('list-group-item');
+
+            // Hae ensimmäinen kirja
+            const firstBook = item.books[0];
+
+            // Näytä teoksen nimi
+            const bookTitleP = document.createElement('p');
+            bookTitleP.textContent = `Title: ${firstBook.title}`; // Näytä teoksen nimi
+            li.appendChild(bookTitleP);
+
+            // Näytä kirjailija
+            const authorName = firstBook.author_name ? firstBook.author_name.join(', ') : 'Unknown Author';
+            const authorP = document.createElement('p');
+            authorP.textContent = `Author: ${authorName}`; // Näytä kirjailijan nimi
+            li.appendChild(authorP);
 
             // Näytä kuvan elementti
             const coverImage = firstBook.cover_i
@@ -37,15 +50,11 @@ function updateSearchList() {
             imageElement.style.height = 'auto'; // Korkeus automaattisesti
 
             li.appendChild(imageElement); // Lisää kuva listaan
-        } else {
-            const bookP = document.createElement('p');
-            bookP.textContent = 'No books available.'; // Jos ei ole teoksia
-            li.appendChild(bookP);
+            topHautUl.appendChild(li); // Lisää lista
         }
-
-        topSearchesUl.appendChild(li);
     });
 }
+
 
 // Handle search form submission
 document.getElementById('bookSearchForm').addEventListener('submit', async function (e) {
