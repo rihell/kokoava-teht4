@@ -15,15 +15,17 @@ body {
 /* Navigaatiopalkki */
 .navbar {
     margin-bottom: 0; /* Lisää tilaa navigaatiopalkin ja muiden elementtien väliin */
-    position: fixed; /*Liikkuu sivun mukana*/
-    width: 100%; /*Koko sivun levyinen*/
-    z-index: 1000; /*Pysyy muiden elementtien päällä*/
+    position: fixed; /* Liikkuu sivun mukana */
+    width: 100%; /* Koko sivun levyinen */
+    z-index: 1000; /* Pysyy muiden elementtien päällä */
 }
+
 .custom-navbar {
     background-color: #3a4d28; 
 }
+
 .content {
-    padding-top: 60px; /*Jotta sisältö ei jää navigaation alle*/
+    padding-top: 60px; /* Jotta sisältö ei jää navigaation alle */
 }
 
 .custom-header {
@@ -70,17 +72,16 @@ body {
     border: 2px solid #3a4d28; /* Muuta reunaväriä hover-tilassa */
 }
 
-/* Fakeimg tyyli */
-.fakeimg {
-    height: 200px; /* Kuvan korkeus */
-    background: #aaa; /* Harmaa tausta */
-    border-radius: 4px; /* Kulmien pyöristys */
-}
-
-#topsearch, #search {
+/* Hakutulosten ja hakukentän tyylit */
+#topSearches, #search { /* Muutettu ID */
     margin-bottom: 30px; /* Lisää tilaa alareunaan */
 }
 
+#topSearches ul {
+    padding: 0; /* Poista sisennys */
+}
+
+/* Footer */
 footer {
     margin-top: auto; /* Siirtää footerin alareunaan */
     padding: 15px; /* Tarpeen mukaan */

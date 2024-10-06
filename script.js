@@ -11,7 +11,7 @@ function saveSearch(title, books) {
 
 // Update top 5 search list on the page
 function updateSearchList() {
-    const topSearchesUl = document.getElementById('topSearches');
+    const topSearchesUl = document.getElementById('topSearches'); // Varmista, että ID on oikein
     topSearchesUl.innerHTML = ''; // Tyhjennä aiempi lista
     const searches = JSON.parse(localStorage.getItem('searches')) || [];
     searches.forEach(item => {
@@ -104,4 +104,6 @@ function displayResults(books) {
 }
 
 // Päivitä hakulista, kun sivu ladataan
-document.addEventListener('DOMContentLoaded', updateSearchList);
+document.addEventListener('DOMContentLoaded', function () {
+    updateSearchList(); // Varmista, että hakulista päivitetään, kun DOM on ladattu
+});
