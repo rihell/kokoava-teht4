@@ -5,48 +5,50 @@ html, body {
 }
 
 body {
-    font-family: 'Arial', sans-serif; /* Muuta fontti halutuksi */
-    line-height: 1.6; /* Lisää riviväliä */
-    padding: 0; /* Poista oletus täytteet */
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    padding: 0;
     display: flex;
     flex-direction: column;
 }
 
 /* Navigaatiopalkki */
 .navbar {
-    margin-bottom: 0; /* Lisää tilaa navigaatiopalkin ja muiden elementtien väliin */
-    position: fixed; /* Liikkuu sivun mukana */
-    width: 100%; /* Koko sivun levyinen */
-    z-index: 1000; /* Pysyy muiden elementtien päällä */
+    margin-bottom: 0; 
+    position: fixed; 
+    width: 100%; 
+    z-index: 1000; 
+    background-color: rgba(58, 77, 40, 0.8); 
 }
 
-.custom-navbar {
-    background-color: #3a4d28; 
-}
-
-.content {
-    padding-top: 60px; /* Jotta sisältö ei jää navigaation alle */
-}
-
+/* Ylätunnisteen taustakuva */
 .custom-header {
-    display: flex; /* Flexbox käyttöön */
-    flex-direction: column; /* Asettaa elementit pystysuunnassa */
-    justify-content: center; /* Keskittää pystysuunnassa */
-    align-items: center; /* Keskittää vaakasuunnassa */
-    height: 250px; /* Suurempi ylätunnisteen korkeus */
-    background-color: #5a7448; /* Taustaväri */
-    color: white; /* Tekstin väri */
-    text-align: center; /* Teksti keskitetty vaakasuunnassa */
+    position: relative; 
+    height: 300px; /* Suurempi korkeus */
+    color: white; 
+    text-align: center; 
+    overflow: hidden; 
+    z-index: 1; 
 }
 
-.custom-header h1 {
-    font-size: 3rem; /* Suurempi otsikkoteksti */
-    margin: 0;
+.header-bg {
+    position: absolute; 
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    z-index: -1; 
 }
 
-.custom-header p {
-    font-size: 1.5rem; /* Suurempi kappaleteksti */
-    margin: 0;
+.header-content {
+    position: relative; 
+    z-index: 2; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    height: 100%; 
+    padding: 0 15px; 
 }
 
 /* Kortti-elementit */
