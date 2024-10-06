@@ -31,7 +31,7 @@ body {
     flex-direction: column; /* Asettaa elementit pystysuunnassa */
     justify-content: center; /* Keskittää pystysuunnassa */
     align-items: center; /* Keskittää vaakasuunnassa */
-    height: 300px; /* Suurempi ylätunnisteen korkeus */
+    height: 250px; /* Suurempi ylätunnisteen korkeus */
     background-color: #5a7448; /* Taustaväri */
     color: white; /* Tekstin väri */
     text-align: center; /* Teksti keskitetty vaakasuunnassa */

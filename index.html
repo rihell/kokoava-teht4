@@ -12,7 +12,7 @@
       height: 200px;
       background: #aaa;
     }
-    #kirjaTulokset {
+    #bookResults {
       margin-top: 20px;
     }
   </style>
@@ -70,7 +70,7 @@
         </div>
         <div class="col-sm-4">
           <div class="card">
-            <img src="mystery.jpg" class="card-img-top" alt="Picture of a open book that has few people in it.">
+            <img src="mystery.jpg" class="card-img-top" alt="Picture of an open book with a few people in it.">
             <div class="card-body">
               <h5 class="card-title">Mystery</h5>
               <p class="card-text">Unravel secrets, solve puzzles, and chase down clues in thrilling stories of suspense and intrigue. Mystery books keep you guessing until the very last page.</p>
@@ -83,31 +83,28 @@
 
     <!-- TOP haut -->
     <div class="container mt-5" id="topsearch">
-          <h2>Most searched</h2>
-          <ul id="topHaut" class="list-group">
-            <!-- Hakulista päivittyy tähän JavaScriptin avulla -->
-          </ul>
-        </div>
-
-        <!-- Hakukenttä -->
-        <div class="container mt-5" id="search">
-          <h2>Search for a book</h2>
-          <p>Input books name and press "search".</p>
-
-          <!-- Hakukenttä -->
-          <form id="kirjaHakuLomake">
-            <div class="input-group mb-3">
-              <input type="text" id="kirjaOtsikko" class="form-control" placeholder="Kirjan otsikko">
-              <button type="submit" class="btn btn-primary">Search</button>
-            </div>
-          </form>
-
-          <!-- Kirjatulokset -->
-          <div id="kirjaTulokset"></div>
-        </div>
-      </div>
+      <h2>Most searched</h2>
+      <ul id="topHaut" class="list-group">
+        <!-- Hakulista päivittyy tähän JavaScriptin avulla -->
+      </ul>
     </div>
 
+    <!-- Hakukenttä -->
+    <div class="container mt-5" id="search">
+      <h2>Search for a book</h2>
+      <p>Input the book's name and press "search".</p>
+
+      <!-- Hakukenttä -->
+      <form id="bookSearchForm">
+        <div class="input-group mb-3">
+          <input type="text" id="bookTitle" class="form-control" placeholder="Book title">
+          <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+      </form>
+
+      <!-- Kirjatulokset -->
+      <div id="bookResults"></div>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -117,3 +114,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+
