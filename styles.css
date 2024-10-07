@@ -29,7 +29,7 @@ body {
 
 /* Ylätunnisteen taustaväri ja keskitä teksti */
 .custom-header {
-    background-image: url('bookrow.jpg'); /* Aseta haluamasi kuvan URL */
+    background-image: url('book.jpg'); /* Aseta haluamasi kuvan URL */
     background-size: cover; /* Skaalaa kuva niin, että se peittää koko alueen */
     background-position: center; /* Keskittää kuvan */
     background-repeat: no-repeat; /* Estää kuvan toistumisen */
