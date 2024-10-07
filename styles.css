@@ -18,7 +18,7 @@ body {
     position: fixed; 
     width: 100%; 
     z-index: 1000; 
-    background-color: rgba(80, 119, 113, 0.8); 
+    background-color:  rgba(44, 58, 59, 0.8);
 }
 
 /* Sisältö */
@@ -60,7 +60,7 @@ body {
 
 /* Muokkaa hakupalkin painikkeen väriä */
 #bookSearchForm .btn {
-    background-color: rgba(80, 119, 113, 0.8); /* Aseta painikkeen taustaväri (esim. vihreä) */
+    background-color: rgba(44, 58, 59, 0.8); /* Aseta painikkeen taustaväri (esim. vihreä) */
     color: white; /* Tekstin väri */
     border: none; /* Poistaa reunan */
     padding: 10px 20px; /* Lisää täytettä painikkeelle */
@@ -70,7 +70,7 @@ body {
 
 /* Hover-efekti painikkeelle */
 #bookSearchForm .btn:hover {
-    background-color: rgba(56, 83, 79, 0.8); /* Muuta taustaväriä hover-tilassa (esim. tummempi vihreä) */
+    background-color:  rgba(44, 58, 59, 0.8); /* Muuta taustaväriä hover-tilassa (esim. tummempi vihreä) */
     color: white; /* Tekstin väri hover-tilassa */
 }
 
@@ -84,7 +84,7 @@ body {
 
 /* Painikkeen ollessa aktiivinen */
 .accordion-button:not(.collapsed) {
-    background-color: rgba(80, 119, 113, 0.8); /* Vihreä väri aktiiviselle painikkeelle */
+    background-color:  rgba(44, 58, 59, 0.8); /* Vihreä väri aktiiviselle painikkeelle */
     color: white; /* Tekstin väri aktiivisessa tilassa */
 }
 
@@ -92,7 +92,7 @@ body {
 footer {
     margin-top: auto; /* Siirtää footerin alareunaan */
     padding: 15px; /* Tarpeen mukaan */
-    background-color: rgba(80, 119, 113, 0.8);  /* Muuta tarpeen mukaan */
+    background-color:  rgba(44, 58, 59, 0.8);  /* Muuta tarpeen mukaan */
     color: white; /* Tekstin väri */
     text-align: center; /* Keskitä teksti */
 }
