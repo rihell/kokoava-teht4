@@ -29,11 +29,11 @@ body {
 
 /* Ylätunnisteen taustaväri ja keskitä teksti */
 .custom-header {
-    background-image: url('books.jpg'); /* Aseta haluamasi kuvan URL */
+    background-image: url('bookrow.jpg'); /* Aseta haluamasi kuvan URL */
     background-size: cover; /* Skaalaa kuva niin, että se peittää koko alueen */
     background-position: center; /* Keskittää kuvan */
     background-repeat: no-repeat; /* Estää kuvan toistumisen */
-    color: white; /* Tekstin väri */
+    color: rgb(0, 0, 0); /* Tekstin väri */
     text-align: center; /* Keskittää tekstin */
     padding: 60px 0; /* Lisää tilaa ylhäältä ja alhaalta */
     display: flex; /* Flexboxin käyttö */
