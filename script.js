@@ -1,7 +1,7 @@
-// Save search term and books to localStorage and update the list
+// Tallenna hakusana ja kirjat localStorageen ja päivitä lista
 function saveSearch(title, books) {
     if (books.length === 0) {
-        console.log('No books found for this search. Not saving to searches.');
+        console.log('Ei kirjoja löytynyt tälle haulle. Ei tallenneta hakuja.');
         return; // Älä tallenna, jos teoksia ei ole
     }
 
@@ -14,7 +14,7 @@ function saveSearch(title, books) {
     updateSearchList(); // Päivitä näkyvä lista
 }
 
-// Update top 5 search list on the page
+// Päivitä top 5 hakulista sivulla
 function updateSearchList() {
     const topHautUl = document.getElementById('topSearches');
     topHautUl.innerHTML = ''; // Tyhjennä aiempi lista
@@ -30,22 +30,22 @@ function updateSearchList() {
 
             // Näytä teoksen nimi
             const bookTitleP = document.createElement('p');
-            bookTitleP.textContent = `Title: ${firstBook.title}`; // Näytä teoksen nimi
+            bookTitleP.textContent = `Nimi: ${firstBook.title}`; // Näytä teoksen nimi
             li.appendChild(bookTitleP);
 
             // Näytä kirjailija
-            const authorName = firstBook.author_name ? firstBook.author_name.join(', ') : 'Unknown Author';
+            const authorName = firstBook.author_name ? firstBook.author_name.join(', ') : 'Tuntematon kirjailija';
             const authorP = document.createElement('p');
-            authorP.textContent = `Author: ${authorName}`; // Näytä kirjailijan nimi
+            authorP.textContent = `Kirjailija: ${authorName}`; // Näytä kirjailijan nimi
             li.appendChild(authorP);
 
             // Näytä kuvan elementti
             const coverImage = firstBook.cover_i
                 ? `https://covers.openlibrary.org/b/id/${firstBook.cover_i}-M.jpg`
-                : 'https://via.placeholder.com/150x200?text=No+image'; // Oletuskuva, jos kansikuvaa ei ole
+                : 'https://via.placeholder.com/150x200?text=Ei+kuvaa'; // Oletuskuva, jos kansikuvaa ei ole
             const imageElement = document.createElement('img');
             imageElement.src = coverImage;
-            imageElement.alt = `${firstBook.title} cover image`;
+            imageElement.alt = `${firstBook.title} kansikuva`;
             imageElement.style.width = '100px'; // Määritä haluttu leveys
             imageElement.style.height = 'auto'; // Korkeus automaattisesti
 
@@ -55,8 +55,7 @@ function updateSearchList() {
     });
 }
 
-
-// Handle search form submission
+// Käsittele hakulomakkeen lähetys
 document.getElementById('bookSearchForm').addEventListener('submit', async function (e) {
     e.preventDefault(); // Estää lomakkeen oletustoiminnon (uudelleenlatauksen)
     const title = document.getElementById('bookTitle').value;
@@ -64,27 +63,27 @@ document.getElementById('bookSearchForm').addEventListener('submit', async funct
     displayResults(books); // Näytä kirjat
 });
 
-// Fetch book details using Open Library API by title
+// Hae kirjainformaatiota Open Library API:sta otsikon perusteella
 async function fetchBooksByTitle(title) {
     try {
         const response = await fetch(`https://openlibrary.org/search.json?title=${title}&limit=5`);
         if (!response.ok) {
-            throw new Error('Network request failed');
+            throw new Error('Verkkopyyntö epäonnistui');
         }
         const data = await response.json();
         return data.docs; // Palauta kirjat
     } catch (error) {
-        console.error('Error in API call:', error);
+        console.error('Virhe API-kutsussa:', error);
         return [];
     }
 }
 
-// Display search results on the page
+// Näytä hakutulokset sivulla
 function displayResults(books) {
     const resultsDiv = document.getElementById('bookResults');
     resultsDiv.innerHTML = ''; // Tyhjennä aiemmat tulokset
     if (books.length === 0) {
-        resultsDiv.innerHTML = '<p>No results found.</p>';
+        resultsDiv.innerHTML = '<p>Ei tuloksia löytynyt.</p>';
         return;
     }
     books.forEach(book => {
@@ -92,17 +91,17 @@ function displayResults(books) {
         bookElement.classList.add('card', 'mb-3');
         const coverImage = book.cover_i
             ? `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`
-            : 'https://via.placeholder.com/150x200?text=No+image'; // Oletuskuva, jos kansikuvaa ei ole     
+            : 'https://via.placeholder.com/150x200?text=Ei+kuvaa'; // Oletuskuva, jos kansikuvaa ei ole     
         bookElement.innerHTML = `
             <div class="row g-0">
                 <div class="col-md-4">
-                    <img src="${coverImage}" class="img-fluid rounded-start" alt="Book cover image">
+                    <img src="${coverImage}" class="img-fluid rounded-start" alt="Kannen kuva">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
                         <h5 class="card-title">${book.title}</h5>
-                        <p class="card-text">Author: ${book.author_name ? book.author_name.join(', ') : 'Unknown'}</p>
-                        <p class="card-text">First published: ${book.first_publish_year || 'Unknown'}</p>
+                        <p class="card-text">Kirjailija: ${book.author_name ? book.author_name.join(', ') : 'Tuntematon'}</p>
+                        <p class="card-text">Ensimmäinen julkaisu: ${book.first_publish_year || 'Tuntematon'}</p>
                     </div>
                 </div>
             </div>
