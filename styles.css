@@ -18,7 +18,7 @@ body {
     position: fixed; 
     width: 100%; 
     z-index: 1000; 
-    background-color: rgba(58, 77, 40, 0.8); 
+    background-color: rgba(80, 119, 113, 0.8); 
 }
 
 /* Sisältö */
@@ -29,14 +29,17 @@ body {
 
 /* Ylätunnisteen taustaväri ja keskitä teksti */
 .custom-header {
-    background-color: #5a7448; /* Vihreä taustaväri */
+    background-image: url('books.jpg'); /* Aseta haluamasi kuvan URL */
+    background-size: cover; /* Skaalaa kuva niin, että se peittää koko alueen */
+    background-position: center; /* Keskittää kuvan */
+    background-repeat: no-repeat; /* Estää kuvan toistumisen */
     color: white; /* Tekstin väri */
     text-align: center; /* Keskittää tekstin */
     padding: 60px 0; /* Lisää tilaa ylhäältä ja alhaalta */
-    display: flex; /* Muutetaan flexboxiksi */
-    justify-content: center; /* Keskitetään vaakasuunnassa */
-    align-items: center; /* Keskitetään pystysuunnassa */
-    height: 100vh; /* Varmistetaan, että se vie koko korkeuden */
+    display: flex; /* Flexboxin käyttö */
+    justify-content: center; /* Keskittää vaakasuunnassa */
+    align-items: center; /* Keskittää pystysuunnassa */
+    height: 100vh; /* Varmistaa, että ylätunniste vie koko korkeuden */
 }
 
 .header-content {
@@ -45,23 +48,13 @@ body {
     align-items: center; 
 }
 
-/* Hakupalkki ja Most Searched */
+/* Hakupalkki */
 /* Poista d-flex hakupalkin tyyleistä, ei enää tarvita */
 #search {
     margin-left: 20px; /* Lisätään tilaa vasemmalta */
     padding: 20px; /* Lisää sisäistä täytettä */
     background-color: #f8f9fa; /* Vaaleampi taustaväri */
     border: 1px solid #ddd; /* Reuna hakupalkille */
-    border-radius: 8px; /* Kulmien pyöristys */
-}
-
-
-/* Most Searched */
-#topSearches {
-    margin-bottom: 30px; /* Lisää tilaa alareunaan */
-    margin-right: 20px; /* Lisää tilaa oikealta */
-    background-color: #f8f9fa; /* Vaaleampi taustaväri */
-    border: 1px solid #ddd; /* Reuna */
     border-radius: 8px; /* Kulmien pyöristys */
 }
 
@@ -74,7 +67,7 @@ body {
 footer {
     margin-top: auto; /* Siirtää footerin alareunaan */
     padding: 15px; /* Tarpeen mukaan */
-    background-color: #5a7448; /* Muuta tarpeen mukaan */
+    background-color: rgba(80, 119, 113, 0.8);  /* Muuta tarpeen mukaan */
     color: white; /* Tekstin väri */
     text-align: center; /* Keskitä teksti */
 }

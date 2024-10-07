@@ -40,23 +40,21 @@
 
     <!-- Ylätunniste -->
     <div class="custom-header content" id="greatbooks">
-      <div class="header-content">
-        <h1>GreatBooks</h1>
-        <p>All books at the same place</p>
-      </div>
-    </div>
-
-<!-- Hakupalkki ja Most Searched -->
-<div class="container mt-5">
-  <div class="row"> <!-- Flexbox sisältö -->
-      <!-- Vasemman puolen osio -->
-      <div class="col-md-4">
-          <div id="topSearches" class="bg-light p-3 rounded">
-              <h2>Most searched</h2>
-              <ul class="list-group">
-                  <!-- Hakulista päivittyy tähän JavaScriptin avulla -->
-              </ul>
+        <div class="header-content">
+          <h1>GreatBooks</h1>
+          <p>All books at the same place</p>
+  
+          <!-- Hakupalkki ylätunnisteessa -->
+          <div class="header-search">
+              <form id="bookSearchForm">
+                  <div class="input-group">
+                      <input type="text" id="bookTitle" class="form-control" placeholder="Search for a book..." aria-label="Book title">
+                      <button type="submit" class="btn btn-primary">Search</button>
+                  </div>
+              </form>
           </div>
+        </div>
+      </div>
 
           <!-- Book Genres Accordion -->
           <div id="genres" class="mt-4">
@@ -129,21 +127,7 @@
               </div>
           </div>
       </div>
-
-      <!-- Oikean puolen osio -->
-      <div class="col-md-8"> <!-- Oikealle puolelle hakupalkki -->
-          <div id="search" class="bg-light p-3 rounded">
-              <h2>Search for a book</h2>
-              <p>Input the book's name and press "search".</p>
-
-              <!-- Hakukenttä -->
-              <form id="bookSearchForm">
-                  <div class="input-group mb-3">
-                      <input type="text" id="bookTitle" class="form-control" placeholder="Book title" aria-label="Book title">
-                      <button type="submit" class="btn btn-primary">Search</button>
-                  </div>
-              </form>
-
+      
               <!-- Kirjatulokset -->
               <div id="bookResults"></div>
           </div>
