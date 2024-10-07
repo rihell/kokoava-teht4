@@ -15,9 +15,7 @@
         #bookResults {
             margin-top: 20px;
         }
-        #topSearches {
-            margin-right: 20px; /* Lisää tilaa oikealta */
-        }
+        /* #topSearches - osio poistettu */
     </style>
 </head>
 <body>
@@ -31,9 +29,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#genres">Genres</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#topSearches">Most searched</a>
-                </li>
             </ul>
         </div>
     </nav>
@@ -41,99 +36,94 @@
     <!-- Ylätunniste -->
     <div class="custom-header content" id="greatbooks">
         <div class="header-content">
-          <h1>GreatBooks</h1>
-          <p>All books at the same place</p>
-  
-          <!-- Hakupalkki ylätunnisteessa -->
-          <div class="header-search">
-              <form id="bookSearchForm">
-                  <div class="input-group">
-                      <input type="text" id="bookTitle" class="form-control" placeholder="Search for a book..." aria-label="Book title">
-                      <button type="submit" class="btn btn-primary">Search</button>
-                  </div>
-              </form>
-          </div>
-        </div>
-      </div>
+            <h1>GreatBooks</h1>
+            <p>All books at the same place</p>
 
-                    <!-- Kirjatulokset -->
-                    <div id="bookResults"></div>
+            <!-- Hakupalkki ylätunnisteessa -->
+            <div class="header-search">
+                <form id="bookSearchForm">
+                    <div class="input-group">
+                        <input type="text" id="bookTitle" class="form-control" placeholder="Search for a book..." aria-label="Book title">
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Kirjatulokset -->
+    <div id="bookResults"></div>
+
+    <!-- Book Genres Accordion -->
+    <div id="genres" class="mt-4">
+        <h2>Book Genres</h2>
+        <div class="accordion" id="genreAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFantasy">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFantasy" aria-expanded="true" aria-controls="collapseFantasy">
+                        Fantasy
+                    </button>
+                </h2>
+                <div id="collapseFantasy" class="accordion-collapse collapse show" aria-labelledby="headingFantasy" data-bs-parent="#genreAccordion">
+                    <div class="accordion-body">
+                        Fantasy involves magical elements, mythical creatures, and often set in imagined worlds. These stories can range from high fantasy, like The Lord of the Rings, to urban fantasy, where magic exists alongside the modern world. It lets readers escape into realms where the impossible becomes possible.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingRomance">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRomance" aria-expanded="false" aria-controls="collapseRomance">
+                        Romance
+                    </button>
+                </h2>
+                <div id="collapseRomance" class="accordion-collapse collapse" aria-labelledby="headingRomance" data-bs-parent="#genreAccordion">
+                    <div class="accordion-body">
+                        Romance novels focus on love stories and the emotional journey between two or more characters. They can range from historical romance (Pride and Prejudice) to contemporary (The Notebook) and even mix with other genres, like paranormal romance.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingMystery">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMystery" aria-expanded="false" aria-controls="collapseMystery">
+                        Mystery
+                    </button>
+                </h2>
+                <div id="collapseMystery" class="accordion-collapse collapse" aria-labelledby="headingMystery" data-bs-parent="#genreAccordion">
+                    <div class="accordion-body">
+                        Centered around solving a crime or unraveling a puzzle, mystery novels keep readers on edge with clues, red herrings, and shocking reveals. Sherlock Holmes is a classic detective story, while Gone Girl represents modern psychological twists.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThriller">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThriller" aria-expanded="false" aria-controls="collapseThriller">
+                        Thriller
+                    </button>
+                </h2>
+                <div id="collapseThriller" class="accordion-collapse collapse" aria-labelledby="headingThriller" data-bs-parent="#genreAccordion">
+                    <div class="accordion-body">
+                        Thrillers are intense, fast-paced novels that often involve danger, high stakes, and suspense. They can range from spy thrillers like The Bourne Identity to psychological thrillers like The Girl on the Train, designed to keep readers on the edge of their seats.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSciFi">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSciFi" aria-expanded="false" aria-controls="collapseSciFi">
+                        Sci-Fi
+                    </button>
+                </h2>
+                <div id="collapseSciFi" class="accordion-collapse collapse" aria-labelledby="headingSciFi" data-bs-parent="#genreAccordion">
+                    <div class="accordion-body">
+                        Sci-Fi explores futuristic concepts like advanced technology, space exploration, time travel, and extraterrestrial life. These stories often challenge the boundaries of human imagination while reflecting on social, ethical, or philosophical issues. Dune and The Expanse are prime examples.
+                    </div>
                 </div>
             </div>
         </div>
-      </div>
-
-          <!-- Book Genres Accordion -->
-          <div id="genres" class="mt-4">
-              <h2>Book Genres</h2>
-              <div class="accordion" id="genreAccordion">
-                  <div class="accordion-item">
-                      <h2 class="accordion-header" id="headingFantasy">
-                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFantasy" aria-expanded="true" aria-controls="collapseFantasy">
-                              Fantasy
-                          </button>
-                      </h2>
-                      <div id="collapseFantasy" class="accordion-collapse collapse show" aria-labelledby="headingFantasy" data-bs-parent="#genreAccordion">
-                          <div class="accordion-body">
-                            Fantasy involves magical elements, mythical creatures, and often set in imagined worlds. These stories can range from high fantasy, like The Lord of the Rings, to urban fantasy, where magic exists alongside the modern world. It lets readers escape into realms where the impossible becomes possible.
-                          </div>
-                      </div>
-                  </div>
-
-                  <div class="accordion-item">
-                      <h2 class="accordion-header" id="headingRomance">
-                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRomance" aria-expanded="false" aria-controls="collapseRomance">
-                              Romance
-                          </button>
-                      </h2>
-                      <div id="collapseRomance" class="accordion-collapse collapse" aria-labelledby="headingRomance" data-bs-parent="#genreAccordion">
-                          <div class="accordion-body">
-                            Romance novels focus on love stories and the emotional journey between two or more characters. They can range from historical romance (Pride and Prejudice) to contemporary (The Notebook) and even mix with other genres, like paranormal romance.
-                          </div>
-                      </div>
-                  </div>
-
-                  <div class="accordion-item">
-                      <h2 class="accordion-header" id="headingMystery">
-                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMystery" aria-expanded="false" aria-controls="collapseMystery">
-                              Mystery
-                          </button>
-                      </h2>
-                      <div id="collapseMystery" class="accordion-collapse collapse" aria-labelledby="headingMystery" data-bs-parent="#genreAccordion">
-                          <div class="accordion-body">
-                            Centered around solving a crime or unraveling a puzzle, mystery novels keep readers on edge with clues, red herrings, and shocking reveals. Sherlock Holmes is a classic detective story, while Gone Girl represents modern psychological twists.
-                          </div>
-                      </div>
-                  </div>
-
-                  <div class="accordion-item">
-                      <h2 class="accordion-header" id="headingThriller">
-                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThriller" aria-expanded="false" aria-controls="collapseThriller">
-                              Thriller
-                          </button>
-                      </h2>
-                      <div id="collapseThriller" class="accordion-collapse collapse" aria-labelledby="headingThriller" data-bs-parent="#genreAccordion">
-                          <div class="accordion-body">
-                            Thrillers are intense, fast-paced novels that often involve danger, high stakes, and suspense. They can range from spy thrillers like The Bourne Identity to psychological thrillers like The Girl on the Train, designed to keep readers on the edge of their seats.
-                          </div>
-                      </div>
-                  </div>
-
-                  <div class="accordion-item">
-                      <h2 class="accordion-header" id="headingSciFi">
-                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSciFi" aria-expanded="false" aria-controls="collapseSciFi">
-                              Sci-Fi
-                          </button>
-                      </h2>
-                      <div id="collapseSciFi" class="accordion-collapse collapse" aria-labelledby="headingSciFi" data-bs-parent="#genreAccordion">
-                          <div class="accordion-body">
-                            Sci-Fi explores futuristic concepts like advanced technology, space exploration, time travel, and extraterrestrial life. These stories often challenge the boundaries of human imagination while reflecting on social, ethical, or philosophical issues. Dune and The Expanse are prime examples.
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -144,4 +134,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-

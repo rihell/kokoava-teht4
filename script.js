@@ -61,18 +61,17 @@ document.getElementById('bookSearchForm').addEventListener('submit', async funct
     e.preventDefault(); // Estää lomakkeen oletustoiminnon (uudelleenlatauksen)
     const title = document.getElementById('bookTitle').value;
     const books = await fetchBooksByTitle(title); // Hae kirjatietoja
-    saveSearch(title, books); // Tallenna haku ja kirjat
+    displayResults(books); // Näytä kirjat
 });
 
 // Fetch book details using Open Library API by title
 async function fetchBooksByTitle(title) {
     try {
-        const response = await fetch(`https://openlibrary.org/search.json?title=${title}`);
+        const response = await fetch(`https://openlibrary.org/search.json?title=${title}&limit=5`);
         if (!response.ok) {
             throw new Error('Network request failed');
         }
         const data = await response.json();
-        displayResults(data.docs); // Näytä tulokset sivulla
         return data.docs; // Palauta kirjat
     } catch (error) {
         console.error('Error in API call:', error);
@@ -88,7 +87,7 @@ function displayResults(books) {
         resultsDiv.innerHTML = '<p>No results found.</p>';
         return;
     }
-    books.slice(0, 5).forEach(book => {
+    books.forEach(book => {
         const bookElement = document.createElement('div');
         bookElement.classList.add('card', 'mb-3');
         const coverImage = book.cover_i
@@ -114,5 +113,5 @@ function displayResults(books) {
 
 // Päivitä hakulista, kun sivu ladataan
 document.addEventListener('DOMContentLoaded', function () {
-    updateSearchList(); // Varmista, että hakulista päivitetään, kun DOM on ladattu
+    // Poistettu updateSearchList -kutsu, koska top searches -toiminto ei ole käytössä
 });
