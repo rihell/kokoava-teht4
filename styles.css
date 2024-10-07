@@ -58,9 +58,34 @@ body {
     border-radius: 8px; /* Kulmien pyöristys */
 }
 
+/* Muokkaa hakupalkin painikkeen väriä */
+#bookSearchForm .btn {
+    background-color: rgba(80, 119, 113, 0.8); /* Aseta painikkeen taustaväri (esim. vihreä) */
+    color: white; /* Tekstin väri */
+    border: none; /* Poistaa reunan */
+    padding: 10px 20px; /* Lisää täytettä painikkeelle */
+    font-size: 16px; /* Aseta fonttikoko */
+    border-radius: 5px; /* Pyöristä painikkeen kulmat */
+}
+
+/* Hover-efekti painikkeelle */
+#bookSearchForm .btn:hover {
+    background-color: rgba(56, 83, 79, 0.8); /* Muuta taustaväriä hover-tilassa (esim. tummempi vihreä) */
+    color: white; /* Tekstin väri hover-tilassa */
+}
+
+
 /* Kirja genrejen haitarit */
 .accordion-button {
     background-color: #f8f9fa; /* Vaaleampi taustaväri */
+    color: #343a40; /* Tekstin väri painikkeille */
+    border: 1px solid #ddd; /* Reuna painikkeille */
+}
+
+/* Painikkeen ollessa aktiivinen */
+.accordion-button:not(.collapsed) {
+    background-color: rgba(80, 119, 113, 0.8); /* Vihreä väri aktiiviselle painikkeelle */
+    color: white; /* Tekstin väri aktiivisessa tilassa */
 }
 
 /* Footer */
