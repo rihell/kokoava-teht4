@@ -49,7 +49,6 @@ body {
 }
 
 /* Hakupalkki */
-/* Poista d-flex hakupalkin tyyleistä, ei enää tarvita */
 #search {
     margin-left: 20px; /* Lisätään tilaa vasemmalta */
     padding: 20px; /* Lisää sisäistä täytettä */
